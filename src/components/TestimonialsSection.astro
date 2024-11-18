@@ -1,0 +1,92 @@
+---
+const testimonials = [
+  {
+    name: "Carlos Gómez",
+    feedback: "¡Excelente servicio! El corte fue impecable y el trato muy profesional. Sin duda, volveré pronto.",
+    image: "/public/Img/Carlos.webp",
+  },
+  {
+    name: "Lucío Martínez",
+    feedback: "Me encantó el ambiente y el cuidado en los detalles. ¡Recomendado al 100%!",
+    image: "/public/Img/Lucio.webp",
+  },
+  {
+    name: "Fernando López",
+    feedback: "El mejor lugar para un corte de cabello y arreglo de barba. ¡Profesionales de verdad!",
+    image: "/public/Img/Fernando.webp",
+  },
+];
+---
+
+<style>
+    .testimonials {
+      padding: 40px 20px;
+      background-color: #ffffff; /* Fondo blanco */
+      text-align: center;
+    }
+  
+    .testimonials-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #0033A0; /* Azul */
+    }
+  
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+  
+    .testimonial-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: left;
+      position: relative;
+      border: 3px solid #FF0000; /* Borde rojo */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+  
+    .testimonial-image {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 2px solid #0033A0; /* Borde azul */
+    }
+  
+    .testimonial-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+      color: #0033A0; /* Azul */
+      font-size: 1.2rem;
+    }
+  
+    .testimonial-feedback {
+      font-style: italic;
+      color: #555;
+      margin-top: 10px;
+    }
+  </style>
+  
+  <section class="testimonials">
+    <h2 class="testimonials-title">Opiniones de nuestros clientes</h2>
+    <div class="testimonials-grid">
+      {testimonials.map(testimonial => (
+        <div class="testimonial-card">
+          <img src={testimonial.image} alt={testimonial.name} class="testimonial-image" />
+          <p class="testimonial-name">{testimonial.name}</p>
+          <p class="testimonial-feedback">"{testimonial.feedback}"</p>
+        </div>
+      ))}
+    </div>
+  </section>
+  

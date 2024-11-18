@@ -1,0 +1,61 @@
+<style>
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background-image: url('/public/Img/inicio.webp');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      height: 80vh;
+      padding: 20px;
+      position: relative;
+      border: 3px solid #FF0000; /* Borde rojo alrededor de la imagen */
+    }
+  
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+  
+    .hero-content {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 40px; /* Ajuste adicional para bajar el contenido */
+    }
+  
+    .cta-button {
+      padding: 15px 30px;
+      background-color: #0033A0; /* Azul */
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      text-decoration: none;
+      border: 2px solid #FF0000; /* Borde rojo */
+      margin-top: 50px; /* Margen más grande para bajar el botón */
+      transition: all 0.3s ease;
+    }
+  
+    .cta-button:hover {
+      background-color: #FF0000; /* Rojo */
+      border-color: #0033A0; /* Borde azul */
+      color: white;
+    }
+  </style>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <a href="#booking" class="cta-button">Reservar Ahora</a>
+    </div>
+  </section>
+  

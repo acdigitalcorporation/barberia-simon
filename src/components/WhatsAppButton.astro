@@ -1,0 +1,45 @@
+    ---
+    const phoneNumber = "+584144061127"; // Reemplaza con el número de la barbería
+    const message = "¡Hola! Me gustaría agendar una cita."; // Mensaje inicial opcional
+    ---
+
+    <style>
+        .whatsapp-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: none; /* Elimina el fondo */
+        box-shadow: none; /* Elimina la sombra */
+        z-index: 1000;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease; /* Efecto de hover */
+        }
+    
+        .whatsapp-button:hover {
+        transform: scale(1.1); /* Agrandar al pasar el mouse */
+        }
+    
+        .whatsapp-icon {
+        width: 180px;
+        height: 80px;
+        }
+    </style>
+    
+    <a
+        href={`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="whatsapp-button"
+        aria-label="Chat on WhatsApp"
+    >
+    <img
+        src="/public/Whatsap.png"
+        alt="WhatsApp"
+        class="whatsapp-icon"
+    />
+    </a>

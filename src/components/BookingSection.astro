@@ -1,0 +1,102 @@
+<script>
+    // Define la función con un tipo explícito para el evento
+    function handleFormSubmit(event: SubmitEvent): void {
+      event.preventDefault(); // Previene el comportamiento predeterminado del formulario
+      alert("¡Gracias! Tu reserva ha sido enviada con éxito.");
+    }
+  </script>
+  
+  
+  <style>
+    .booking {
+      padding: 40px 20px;
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+    }
+  
+    .booking-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #0033A0; /* Azul */
+    }
+  
+    .booking-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1s ease;
+    }
+  
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .form-input {
+      padding: 15px;
+      border: 2px solid #0033A0; /* Azul */
+      border-radius: 5px;
+      font-size: 1rem;
+      color: #333;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .form-input:focus {
+      border-color: #FF0000; /* Rojo */
+      box-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+      outline: none;
+    }
+  
+    .form-button {
+      padding: 15px 20px;
+      background-color: #0033A0; /* Azul */
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      border: none;
+      font-size: 1.2rem;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+  
+    .form-button:hover {
+      background-color: #FF0000; /* Rojo */
+      transform: scale(1.05);
+    }
+  
+    .form-button:active {
+      transform: scale(0.95);
+    }
+  
+    .success-message {
+      font-size: 1.2rem;
+      color: #0033A0;
+      margin-top: 20px;
+      animation: fadeIn 1s ease;
+    }
+  </style>
+  
+  <section id="booking" class="booking">
+    <h2 class="booking-title">Reserva tu Cita</h2>
+    <form class="booking-form" onsubmit="handleFormSubmit(event)">
+      <input type="text" name="name" placeholder="Nombre Completo" class="form-input" required />
+      <input type="tel" name="phone" placeholder="Teléfono" class="form-input" required />
+      <input type="date" name="date" class="form-input" required />
+      <input type="time" name="time" class="form-input" required />
+      <button type="submit" class="form-button">Reservar</button>
+    </form>
+  </section>
+  

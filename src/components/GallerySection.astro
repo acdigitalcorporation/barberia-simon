@@ -1,0 +1,55 @@
+---
+const galleryImages = [
+  "/public/Img/1.webp",
+  "/public/Img/2.webp",
+  "/public/Img/3.webp",
+  "/public/Img/4.webp",
+  "/public/Img/5.webp",
+  "/public/Img/6.webp",
+];
+---
+
+<style>
+    .gallery {
+      padding: 40px 20px;
+      background-color: #ffffff; /* Fondo blanco */
+      text-align: center;
+    }
+  
+    .gallery-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #0033A0; /* Azul */
+    }
+  
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Más grande para destacar las imágenes */
+      gap: 15px;
+    }
+  
+    .gallery-image {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 3px solid #FF0000; /* Borde rojo */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  
+    .gallery-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      border-color: #0033A0; /* Cambia el borde a azul al hacer hover */
+    }
+  </style>
+  
+  <section class="gallery">
+    <h2 class="gallery-title">Nuestra Galería</h2>
+    <div class="gallery-grid">
+      {galleryImages.map(image => (
+        <img src={image} alt="Galería Barbería" class="gallery-image" />
+      ))}
+    </div>
+  </section>
+  

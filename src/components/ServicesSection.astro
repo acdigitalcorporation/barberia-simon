@@ -1,0 +1,102 @@
+---
+const services = [
+  {
+    name: "Corte de Cabello",
+    description: "Un corte clásico o moderno que resalta tu estilo.",
+    price: "$3.50",
+    icon: "/public/Img/Corte clasico.webp",
+  },
+  {
+    name: "Arreglo de Barba",
+    description: "Diseño y cuidado de tu barba con productos premium.",
+    price: "$1.99",
+    icon: "/public/Img/Barba.webp",
+  },
+  {
+    name: "Corte + Barba",
+    description: "Un paquete completo para lucir impecable.",
+    price: "$4.99",
+    icon: "/public/Img/paquete.webp",
+  },
+];
+---
+
+<style>
+    .services {
+      padding: 40px 20px;
+      background-color: #ffffff; /* Fondo blanco */
+      text-align: center;
+    }
+  
+    .services-title {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #0033A0; /* Azul */
+    }
+  
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      justify-items: center;
+    }
+  
+    .service-card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      max-width: 350px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 3px solid #FF0000; /* Borde rojo */
+    }
+  
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+  
+    .service-icon {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      border: 3px solid #0033A0; /* Borde azul */
+    }
+  
+    .service-name {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin: 10px 0;
+      color: #0033A0; /* Azul */
+    }
+  
+    .service-description {
+      font-size: 1rem;
+      margin: 10px 0;
+      color: #555;
+    }
+  
+    .service-price {
+      color: #FF0000; /* Rojo */
+      font-size: 1.4rem;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+  
+  <section class="services">
+    <h2 class="services-title">Nuestros Servicios</h2>
+    <div class="services-grid">
+      {services.map(service => (
+        <div class="service-card">
+          <img src={service.icon} alt={service.name} class="service-icon" />
+          <h3 class="service-name">{service.name}</h3>
+          <p class="service-description">{service.description}</p>
+          <p class="service-price">{service.price}</p>
+        </div>
+      ))}
+    </div>
+  </section>
